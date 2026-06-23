@@ -1,52 +1,56 @@
-# Flex Sensor Based Servo Motor Control System
+# Flex Sensor Based Servo Motor Control System using Raspberry Pi Pico
 
 ## Overview
 
-This project uses a Flex Sensor to control the position of a Servo Motor in real time. The bending angle of the flex sensor is measured using an Arduino Uno and displayed on a 16x2 LCD. The servo motor rotates according to the amount of bending detected by the sensor.
+This project demonstrates real-time servo motor control using a flex sensor and Raspberry Pi Pico. The resistance of the flex sensor changes when bent, and the Pico reads the corresponding analog value through its ADC pin. The sensor value is then mapped to a servo angle, allowing the servo motor to move according to the amount of bending.
+
+An I2C LCD is used to display the flex sensor readings and servo angle in real time.
 
 ## Features
 
 - Real-time flex sensor monitoring
-- Servo motor angle control (0°–180°)
-- LCD display for sensor readings and angle values
-- Simple and low-cost implementation
-- Suitable for robotics and gesture-controlled applications
+- Servo motor control from 0° to 180°
+- Live display of sensor values on I2C LCD
+- Implemented using MicroPython
+- Low-cost embedded system design
 
-## Components Used
+## Hardware Components
 
-- Arduino Uno
+- Raspberry Pi Pico
 - Flex Sensor
-- Servo Motor (SG90)
+- SG90 Servo Motor
 - 16x2 LCD with I2C Module
 - 10kΩ Resistor
 - Breadboard
 - Jumper Wires
 
+## Software Used
+
+- Thonny IDE
+- MicroPython
+- Raspberry Pi Pico SDK Libraries
+
 ## Working Principle
 
-1. The flex sensor changes resistance when bent.
-2. Arduino reads the analog voltage through a voltage divider circuit.
-3. The sensor value is mapped to a servo angle.
-4. The servo rotates according to the bend.
-5. Sensor value and servo angle are displayed on the LCD.
+1. The flex sensor acts as a variable resistor.
+2. Raspberry Pi Pico reads the sensor voltage using its ADC.
+3. Sensor readings are mapped to a corresponding servo angle.
+4. The servo motor rotates according to the bend of the sensor.
+5. LCD displays sensor values and motor position.
 
-## Circuit Connections
+## Circuit Diagram
 
-### Flex Sensor
-- One end → 5V
-- Other end → A0
-- 10kΩ resistor between A0 and GND
+![Circuit Diagram](Circuit_Diagram/circuit.png)
 
-### Servo Motor
-- Signal → D9
-- VCC → 5V
-- GND → GND
+## Project Images
 
-### I2C LCD
-- SDA → A4
-- SCL → A5
-- VCC → 5V
-- GND → GND
+### Hardware Setup
+
+![Setup](Images/setup.jpg)
+
+### Working Demonstration
+
+![Working](Images/working1.jpg)
 
 ## Applications
 
@@ -55,18 +59,28 @@ This project uses a Flex Sensor to control the position of a Servo Motor in real
 - Prosthetic devices
 - Human-machine interaction
 - Rehabilitation systems
+- Embedded Systems Education
 
 ## Future Improvements
 
-- Wireless monitoring using ESP32
-- Multiple flex sensor integration
-- Robotic arm control
-- IoT-based data logging
+- Wireless monitoring using Wi-Fi
+- Multi-flex sensor glove
+- Robotic arm implementation
+- IoT integration for remote monitoring
+
+## Repository Structure
+
+Flex-Sensor-Servo-Control-System/
+├── main.py
+├── Images/
+├── Circuit_Diagram/
+├── Documentation/
+└── README.md
 
 ## Author
 
 Dheeraj J
 
-Electronics and Communication Engineering
+B.E. Electronics and Communication Engineering
 
 M. S. Ramaiah Institute of Technology
